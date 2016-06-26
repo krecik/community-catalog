@@ -1,0 +1,46 @@
+.catalog:
+    name: "Graylog"
+    version: "v2.0.3-2"
+    description: "Open source log management that actually works."
+    questions:
+        - variable: graylog_password
+          description: "Password in sha2"
+          label: "SHA2 Password"
+          type: "string"
+          default: "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918"
+          required: true
+        - variable: graylog_secret
+          description: "Password secret"
+          label: "Password secret"
+          type: "password"
+          default: "somepasswordpepper"
+          required: true
+        - variable: graylog_web_listen_uri
+          description: "It must not contain a path other than '/'."
+          label: "Web interface listen URI"
+          default: "http://127.0.0.1:9000"
+          type: "string"
+          required: true
+        - variable: graylog_web_endpoint_uri
+          label: "Web interface endpoint URI"
+          default: "http://127.0.0.1:12900/"
+          type: "string"
+          required: false
+        - variable: graylog_web_enable_gzip
+          description: "Serve web interface assets using compression."
+          label: "GZIP support"
+          default: false
+          type: "boolean"
+          required: false
+        - variable: graylog_rest_listen_uri
+          description: "Must be reachable by other Graylog server nodes if you run a cluster."
+          label: "REST API listen URI"
+          default: "http://127.0.0.1:12900"
+          type: "string"
+          required: true
+        - variable: graylog_rest_transport_uri
+          description: "You will need to define this, if your Graylog server is running behind a HTTP proxy that is rewriting the scheme, host name or URI."
+          label: "REST API transport address"
+          default: "http://127.0.0.1:12900"
+          type: "string"
+          required: true
