@@ -34,14 +34,9 @@ graylog:
         GRAYLOG_PASSWORD_SECRET: ${graylog_secret}
         GRAYLOG_ROOT_PASSWORD_SHA2: ${graylog_password}
         GRAYLOG_REST_TRANSPORT_URI: ${graylog_rest_transport_uri}
-        # GRAYLOG_REST_TRANSPORT_URI: "http://192.168.0.102:12900"
         GRAYLOG_REST_LISTEN_URI: ${graylog_rest_listen_uri}
-        # GRAYLOG_REST_LISTEN_URI: "127.0.0.1:12900"
-        #GRAYLOG_REST_LISTEN_URI: "http://0.0.0.0:12900/"
         GRAYLOG_WEB_LISTEN_URI: ${graylog_web_listen_uri}
-        # GRAYLOG_WEB_LISTEN_URI: "127.0.0.1:9000"
-        GRAYLOG_WEB_ENDPOINT_URI: {$graylog_web_endpoint_uri}
-        # GRAYLOG_WEB_ENDPOINT_URI: ${graylog_web_endpoint_uri}
+        GRAYLOG_WEB_ENDPOINT_URI: ${graylog_web_endpoint_uri}
         GRAYLOG_WEB_ENABLE_GZIP: ${graylog_web_enable_gzip}
     image: "graylog2/server:2.0.3-2"
     labels:
